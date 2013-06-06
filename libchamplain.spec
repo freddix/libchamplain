@@ -2,12 +2,12 @@
 
 Summary:	C library providing a ClutterActor to display maps
 Name:		libchamplain
-Version:	0.12.3
-Release:	2
+Version:	0.12.4
+Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://download.gnome.org/sources/libchamplain/0.12/%{name}-%{version}.tar.xz
-# Source0-md5:	f0d63225c2efa8b367ebf205fa40862a
+# Source0-md5:	f24348006d013b4ded2a4b1c237f6286
 URL:		http://projects.gnome.org/libchamplain/
 BuildRequires:	autoconf
 BuildRequires:	automake
