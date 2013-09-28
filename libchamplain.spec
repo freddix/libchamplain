@@ -2,12 +2,12 @@
 
 Summary:	C library providing a ClutterActor to display maps
 Name:		libchamplain
-Version:	0.12.4
+Version:	0.12.5
 Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://download.gnome.org/sources/libchamplain/0.12/%{name}-%{version}.tar.xz
-# Source0-md5:	f24348006d013b4ded2a4b1c237f6286
+# Source0-md5:	7cdf8e9f4120316f9feefd0fdb115972
 URL:		http://projects.gnome.org/libchamplain/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -109,7 +109,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libchamplain-%{api}.so
 %{_includedir}/libchamplain-%{api}
-%{_libdir}/libchamplain-%{api}.la
 %{_pkgconfigdir}/champlain-%{api}.pc
 %{_pkgconfigdir}/champlain-memphis-%{api}.pc
 %{_datadir}/gir-1.0/Champlain-%{api}.gir
@@ -126,16 +125,15 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libchamplain-gtk-%{api}.so
 %{_includedir}/libchamplain-gtk-%{api}
-%{_libdir}/libchamplain-gtk-%{api}.la
 %{_pkgconfigdir}/champlain-gtk-%{api}.pc
 %{_datadir}/gir-1.0/GtkChamplain-%{api}.gir
 %{_datadir}/vala/vapi/champlain-gtk-%{api}.vapi
 
 %files apidocs
 %defattr(644,root,root,755)
-%{_gtkdocdir}/libchamplain
+%{_gtkdocdir}/libchamplain-%{api}
 
 %files gtk-apidocs
 %defattr(644,root,root,755)
-%{_gtkdocdir}/libchamplain-gtk
+%{_gtkdocdir}/libchamplain-gtk-%{api}
 
