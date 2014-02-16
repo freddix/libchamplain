@@ -2,12 +2,12 @@
 
 Summary:	C library providing a ClutterActor to display maps
 Name:		libchamplain
-Version:	0.12.5
+Version:	0.12.7
 Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://download.gnome.org/sources/libchamplain/0.12/%{name}-%{version}.tar.xz
-# Source0-md5:	7cdf8e9f4120316f9feefd0fdb115972
+# Source0-md5:	a5165d0148e75adc79d0b6ca10b7f546
 URL:		http://projects.gnome.org/libchamplain/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -16,7 +16,7 @@ BuildRequires:	gobject-introspection-devel
 BuildRequires:	intltool
 BuildRequires:	libsoup-gnome-devel
 BuildRequires:	libtool
-BuildRequires:	memphis-devel
+#BuildRequires:	memphis-devel
 BuildRequires:	pkg-config
 BuildRequires:	vala
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -89,6 +89,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -110,7 +112,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libchamplain-%{api}.so
 %{_includedir}/libchamplain-%{api}
 %{_pkgconfigdir}/champlain-%{api}.pc
-%{_pkgconfigdir}/champlain-memphis-%{api}.pc
+#%{_pkgconfigdir}/champlain-memphis-%{api}.pc
 %{_datadir}/gir-1.0/Champlain-%{api}.gir
 %{_datadir}/vala/vapi/champlain-%{api}.vapi
 
